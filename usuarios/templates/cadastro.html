@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <form action="{% url 'cadastro' %}" method="post">
+        {% csrf_token %}
+
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <input type="submit" value="Cadastrar">
+        
+    </form>
+</body>
+</html>
