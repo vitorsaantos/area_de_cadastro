@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 def cadastro(request):
     if request.method == 'GET':
-        return render(request, 'cadastro.html')
+        return render(request, 'pages/cadastro.html')
     
     else:
         username = request.POST.get('username')
@@ -28,7 +28,7 @@ def cadastro(request):
 
 def login(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+        return render(request, 'pages/login.html')
 
     else:
         username = request.POST.get('username')
@@ -46,3 +46,7 @@ def login(request):
 @login_required(login_url="/client/login/")
 def cliente(request):
     return HttpResponse('Area do cliente')
+
+
+def inicio(request):
+    return render(request,'pages/home.html')
