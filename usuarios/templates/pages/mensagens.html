@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,19 +14,20 @@
     
     <link rel="stylesheet" href="{% static 'usuarios/css/styles.css' %}">
 
-    
-    
-    <title>Registrer</title>
+
+    <title>Invalid login or password</title>
 </head>
 <body>
-    <form action="{% url 'cadastro' %}" class="form-content-cadastro" method="post">
-        {% csrf_token %}
 
-        <input type="text" class="cd-username" placeholder="Username" name="username">
-        <input type="text" class="cd-email" placeholder="Email" name="email">
-        <input type="password" class="cd-password" placeholder="Password" name="password">
-        <input type="submit" class="cd-submit" value="Cadastrar">
+    <div class="invalid-content">
+        <h1>Senha ou Login invalidos!</h1>
+        <button type="button" class="btn-registrer">
+            <a href="../cadastro">Registrar</a>
+            <i class="fa-solid fa-id-card"></i>
+        </button>
         
-    </form>
+
+    </div>
+
 </body>
 </html>

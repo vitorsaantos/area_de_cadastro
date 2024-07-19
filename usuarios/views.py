@@ -6,6 +6,10 @@ from django.contrib.auth import login as login_django
 from django.contrib.auth.decorators import login_required
 
 
+
+def inicio(request):
+    return render(request,'pages/home.html')
+
 def cadastro(request):
     if request.method == 'GET':
         return render(request, 'pages/cadastro.html')
@@ -23,7 +27,7 @@ def cadastro(request):
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
 
-        return HttpResponse('Usuário cadastrado com sucesso!')
+        return render(request, 'pages/login.html')
 
 
 def login(request):
@@ -38,15 +42,16 @@ def login(request):
 
         if user:
             login_django(request, user)
-            return HttpResponse('Logado com sucesso!')
+            return render(request, 'pages/home.html')
         
         else:
             return HttpResponse('Email ou Senha invalida!')
         
+def mensagens(request):
+    return render(request, 'pages/mensagens.html' )
+        
 @login_required(login_url="/client/login/")
 def cliente(request):
-    return HttpResponse('Area do cliente')
+    return HttpResponse('AREA DO CLIENTE!!!')
 
 
-def inicio(request):
-    return render(request,'pages/home.html')
