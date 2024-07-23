@@ -19,10 +19,11 @@
 <body>
     <form action="{% url 'login' %}" class="form-content-login" method="post">
         {% csrf_token %}
-
         <input type="text" class="username" placeholder="Username" name="username">
         <input type="password" class="password" placeholder="Password" name="password">
         <input type="submit" class="submit" value="Logar">
+
+
     </form>
 </body>
 </html>

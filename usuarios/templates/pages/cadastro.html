@@ -20,10 +20,8 @@
 <body>
     <form action="{% url 'cadastro' %}" class="form-content-cadastro" method="post">
         {% csrf_token %}
-
-        <input type="text" class="cd-username" placeholder="Username" name="username">
-        <input type="text" class="cd-email" placeholder="Email" name="email">
-        <input type="password" class="cd-password" placeholder="Password" name="password">
+        {{form}}
+        
         <input type="submit" class="cd-submit" value="Cadastrar">
         
     </form>
